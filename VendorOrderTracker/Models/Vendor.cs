@@ -24,7 +24,7 @@ namespace VendorOrderTracker.Models
 
     public static Vendor FindVendor(int id)
     {
-      return new Vendor("", "");
+      return _vendors[id];
     }
 
     public static List<Vendor> GetVendors()
