@@ -1,3 +1,27 @@
 @{
   Layout = "_Base";
 }
+
+@using VendorOrderTracker.Models;
+
+<h3>Order Details:</h3>
+
+<p>
+  Vendor: @Model["vendor"].Name
+</p>
+
+<p>
+  Order: @Model["order"].Title
+</p>
+
+<p>
+  Order Description: @Model["order"].Description
+</p>
+
+<p>
+  Order Price: @Model["order"].Price
+</p>
+
+<p>
+  Order Date: @Model["order"].Date
+</p>

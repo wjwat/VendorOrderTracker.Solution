@@ -1,0 +1,8 @@
+textarea {
+  resize: vertical;
+}
+
+.vendor-name {
+  font-weight: bold;
+  font-size: 24px;
+}
