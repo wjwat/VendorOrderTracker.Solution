@@ -38,5 +38,11 @@ namespace VendorOrderTracker.Tests
     {
       Assert.AreEqual(testDescription, testOrder.Description);
     }
+
+    [TestMethod]
+    public void GetPrice_ReturnsOrderPrice_Int()
+    {
+      Assert.AreEqual(testPrice, testOrder.Price);
+    }
   }
 }
