@@ -9,6 +9,20 @@ namespace VendorOrderTracker.Tests
   [TestClass]
   public class VendorTests
   {
-    // Run some tests
+    Vendor testVendor;
+    string testName = "Vendor Name";
+    string testDescription = "Test description";
+
+    [TestInitialize]
+    public void Initialize()
+    {
+      testVendor = new Vendor(testName, testDescription);
+    }
+
+    [TestMethod]
+    public void VendorConstructor_CreateInstanceOfVendor_Vendor()
+    {
+      Assert.AreEqual(typeof(Vendor), testVendor.GetType());
+    }
   }
 }

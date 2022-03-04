@@ -4,6 +4,15 @@ namespace VendorOrderTracker.Models
 {
   public class Vendor
   {
-    // Do stuff
+    public string Name { get; init; }
+    public string Description { get; init; }
+    public List<Order> Orders { get; set; }
+    private static List<Vendor> _vendors = new List<Vendor>();
+
+    public Vendor(string name, string description)
+    {
+      Name = "";
+      Description = "";
+    }
   }
 }
