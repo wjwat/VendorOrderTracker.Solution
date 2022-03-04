@@ -44,5 +44,11 @@ namespace VendorOrderTracker.Tests
     {
       Assert.AreEqual(testPrice, testOrder.Price);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnsOrderDate_String()
+    {
+      Assert.AreEqual(testDate, testOrder.Date);
+    }
   }
 }
