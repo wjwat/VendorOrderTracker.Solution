@@ -98,15 +98,11 @@ namespace VendorOrderTracker.Tests
       // of 1, for the Vendor we are searching for.
       Vendor.ClearVendors();
 
-      Vendor findVendorTest = new Vendor("find me", "bet you can't");
+      Vendor zerothVendor = new Vendor("test1", "test2");
+      Vendor firstVendor = new Vendor("find me", "bet you can't");
+      Vendor secondVendor = new Vendor("test5", "test6");
 
-      List<Vendor> testVendorList = new List<Vendor> {
-        new Vendor("test1", "test2"),
-        findVendorTest,
-        new Vendor("test5", "test6"),
-      };
-
-      Assert.AreEqual(1, findVendorTest.GetVendorId());
+      Assert.AreEqual(1, firstVendor.GetVendorId());
     }
   }
 }
