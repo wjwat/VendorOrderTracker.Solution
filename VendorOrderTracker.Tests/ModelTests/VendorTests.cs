@@ -45,5 +45,20 @@ namespace VendorOrderTracker.Tests
 
       CollectionAssert.AreEqual(emptyVendorList, Vendor.GetVendors());
     }
+
+    [TestMethod]
+    public void GetVendors_ReturnsListOfAllVendorObjects_VendorList()
+    {
+      // Remove Vendors to start with empty list
+      Vendor.ClearVendors();
+
+      List<Vendor> testVendorList = new List<Vendor> {
+        new Vendor("test1", "test2"),
+        new Vendor("test3", "test4"),
+        new Vendor("test5", "test6"),
+      };
+
+      CollectionAssert.AreEqual(testVendorList, Vendor.GetVendors());
+    }
   }
 }
