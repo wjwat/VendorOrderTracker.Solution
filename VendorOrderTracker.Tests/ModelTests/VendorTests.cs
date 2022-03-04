@@ -20,6 +20,12 @@ namespace VendorOrderTracker.Tests
       testVendor = new Vendor(testName, testDescription);
     }
 
+    [TestCleanup]
+    public void Cleanup()
+    {
+      Vendor.ClearVendors();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreateInstanceOfVendor_Vendor()
     {
@@ -74,6 +80,16 @@ namespace VendorOrderTracker.Tests
       testVendor.AddOrder(testOrder);
 
       CollectionAssert.AreEqual(testOrderList, testVendor.Orders);
+    }
+
+    [TestMethod]
+    public void FindVendor_ReturnsVendorAssociatedWithThatId_Vendor()
+    {
+      Vendor result = Vendor.FindVendor(0);
+
+      Console.WriteLine(result.Name);
+
+      Assert.AreEqual(testVendor, result);
     }
   }
 }
