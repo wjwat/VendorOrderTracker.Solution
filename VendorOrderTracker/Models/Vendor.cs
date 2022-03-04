@@ -39,7 +39,7 @@ namespace VendorOrderTracker.Models
 
     public int GetVendorId()
     {
-      return -1;
+      return _vendors.FindIndex(x => x.Equals(this));
     }
   }
 }
