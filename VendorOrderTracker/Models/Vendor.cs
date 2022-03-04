@@ -6,13 +6,14 @@ namespace VendorOrderTracker.Models
   {
     public string Name { get; init; }
     public string Description { get; init; }
-    public List<Order> Orders { get; }
+    public List<Order> Orders { get; init; }
     private static List<Vendor> _vendors = new List<Vendor>();
 
     public Vendor(string name, string description)
     {
       Name = name;
       Description = description;
+      Orders = new List<Order>();
       _vendors.Add(this);
     }
 
@@ -33,7 +34,7 @@ namespace VendorOrderTracker.Models
 
     public void AddOrder(Order newOrder)
     {
-      // add an order
+      // Add an order to list
     }
   }
 }

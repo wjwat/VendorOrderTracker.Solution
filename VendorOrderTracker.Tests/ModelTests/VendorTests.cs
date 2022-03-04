@@ -60,5 +60,20 @@ namespace VendorOrderTracker.Tests
 
       CollectionAssert.AreEqual(testVendorList, Vendor.GetVendors());
     }
+
+    [TestMethod]
+    public void AddOrder_AddsOrderToListOfOrdersInVendor_True()
+    {
+      // public Order(string title, string description, int price, string date)
+      Order testOrder = new Order("Title", "Descrip", 100, "6/7/2090");
+
+      List<Order> testOrderList = new List<Order> {
+        testOrder,
+      };
+
+      testVendor.AddOrder(testOrder);
+
+      CollectionAssert.AreEqual(testOrderList, testVendor.Orders);
+    }
   }
 }
