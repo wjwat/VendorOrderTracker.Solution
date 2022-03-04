@@ -18,7 +18,7 @@ namespace VendorOrderTracker.Models
 
     public static void ClearVendors()
     {
-      // clear the vendors
+      _vendors.Clear();
     }
 
     public static Vendor FindVendor(int id)
