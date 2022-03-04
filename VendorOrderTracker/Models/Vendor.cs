@@ -36,5 +36,10 @@ namespace VendorOrderTracker.Models
     {
       Orders.Add(newOrder);
     }
+
+    public int GetVendorId()
+    {
+      return -1;
+    }
   }
 }

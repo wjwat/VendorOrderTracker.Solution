@@ -70,7 +70,6 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void AddOrder_AddsOrderToListOfOrdersInVendor_True()
     {
-      // public Order(string title, string description, int price, string date)
       Order testOrder = new Order("Title", "Descrip", 100, "6/7/2090");
 
       List<Order> testOrderList = new List<Order> {
@@ -90,6 +89,24 @@ namespace VendorOrderTracker.Tests
       Console.WriteLine(result.Name);
 
       Assert.AreEqual(testVendor, result);
+    }
+
+    [TestMethod]
+    public void GetVendorId_ReturnsIntIdForThatVendorInstance_Int()
+    {
+      // Remove our default Vendor so it makes sense when we get back an ID
+      // of 1, for the Vendor we are searching for.
+      Vendor.ClearVendors();
+
+      Vendor findVendorTest = new Vendor("find me", "bet you can't");
+
+      List<Vendor> testVendorList = new List<Vendor> {
+        new Vendor("test1", "test2"),
+        findVendorTest,
+        new Vendor("test5", "test6"),
+      };
+
+      Assert.AreEqual(1, findVendorTest.GetVendorId());
     }
   }
 }
