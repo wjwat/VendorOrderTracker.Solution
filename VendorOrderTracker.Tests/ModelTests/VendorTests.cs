@@ -12,6 +12,7 @@ namespace VendorOrderTracker.Tests
     Vendor testVendor;
     string testName = "Vendor Name";
     string testDescription = "Test description";
+    List<Vendor> emptyVendorList = new List<Vendor>();
 
     [TestInitialize]
     public void Initialize()
@@ -35,6 +36,14 @@ namespace VendorOrderTracker.Tests
     public void GetDescription_ReturnsVendorDescription_String()
     {
       Assert.AreEqual(testDescription, testVendor.Description);
+    }
+
+    [TestMethod]
+    public void ClearVendors_RemovesAllVendorListObjects_True()
+    {
+      Vendor.ClearVendors();
+
+      CollectionAssert.AreEqual(emptyVendorList, Vendor.GetVendors());
     }
   }
 }

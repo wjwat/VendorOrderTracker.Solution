@@ -10,7 +10,7 @@ namespace VendorOrderTracker.Controllers
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Vendor> vendors = Vendor.GetAll();
+      List<Vendor> vendors = Vendor.GetVendors();
 
       return View(vendors);
     }

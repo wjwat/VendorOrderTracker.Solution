@@ -13,6 +13,12 @@ namespace VendorOrderTracker.Models
     {
       Name = name;
       Description = description;
+      _vendors.Add(this);
+    }
+
+    public static void ClearVendors()
+    {
+      // clear the vendors
     }
 
     public static Vendor FindVendor(int id)
@@ -20,9 +26,9 @@ namespace VendorOrderTracker.Models
       return new Vendor("", "");
     }
 
-    public static List<Vendor> GetAll()
+    public static List<Vendor> GetVendors()
     {
-      return new List<Vendor>();
+      return _vendors;
     }
 
     public void AddOrder(Order newOrder)
