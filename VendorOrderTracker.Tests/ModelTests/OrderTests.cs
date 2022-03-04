@@ -36,7 +36,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetDescription_ReturnsOrderDescription_String()
     {
-      Assert.AreEqual(testTitle, testOrder.Description);
+      Assert.AreEqual(testDescription, testOrder.Description);
     }
   }
 }
