@@ -44,6 +44,7 @@ C# & ASP.Net to build a RESTful application.
       Now listening on: https://localhost:5001
       Application started. Press Ctrl+C to shut down.
     ```
+- Or visit https://vendor-order-tracker-wjwat.herokuapp.com/vendors
 - If you'd like to run the tests please run `dotnet test VendorOrderTracker.Tests` in the top level directory.
 
 ## :world_map: Roadmap
