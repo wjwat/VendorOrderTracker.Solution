@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
+using VendorOrderTracker.Models;
 
 namespace VendorOrderTracker.Controllers
 {
@@ -8,7 +11,8 @@ namespace VendorOrderTracker.Controllers
       [HttpGet("/")]
       public ActionResult Index()
       {
-        return View();
+        List<Vendor> v = Vendor.GetVendors();
+        return View(v);
       }
 
     }
