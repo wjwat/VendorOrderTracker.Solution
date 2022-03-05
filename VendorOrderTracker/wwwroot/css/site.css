@@ -1,8 +1,18 @@
+body > header h1 {
+  text-align: center;
+}
+
+footer div p {
+  margin: 0.5rem auto;
+}
+
 textarea {
   resize: vertical;
 }
 
 .vendor-name {
+  text-transform: uppercase;
+  text-decoration: underline;
   font-weight: bold;
   font-size: 24px;
 }
