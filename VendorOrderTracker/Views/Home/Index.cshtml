@@ -1,12 +1,49 @@
 @{
   Layout = "_Base";
+  Dictionary<Order, Vendor> orderDict = new Dictionary<Order, Vendor>();
 }
+@using VendorOrderTracker.Models;
 
 <h2>Welcome to Pierre's Vendor Page</h2>
 
 <p>On this page you will be able to view all of the vendors in your system,
 update the list with new ones, and add orders to each vendor.</p>
 
-<p>Please selection which you would like to do:</p>
+<p>Please select which you would like to do:</p>
 <a href='/vendors'><button type='button'>View Vendors</button></a>
 <a href='/vendors/new'><button type='button'>Add Vendor</button></a>
+
+<fieldset>
+  <legend>Upcoming Orders</legend>
+
+  @if (Model.Count == 0)
+  {
+    <h3 class='center reduced-margin'>No upcoming orders.</h3>
+  }
+  else
+  {
+    @foreach (Vendor v in Model)
+    {
+      if (v.Orders.Count != 0)
+      {
+        @foreach (Order o in v.Orders)
+        {
+          orderDict.Add(o, v);
+        }
+      }
+    }
+
+    <table><tbody>
+    @foreach (var o in orderDict.OrderBy(k => k.Key.Date))
+    {
+      <tr>
+        <td><b>@o.Key.Date</b></td>
+        <td style='width: 20%'>
+          <a class='vendor-name' href='/vendors/@o.Value.GetVendorId()'>@o.Value.Name</a>
+        </td>
+        <td>@o.Key.Description</td>
+      </tr>
+    }
+    </tbody></table>
+  }
+</fieldset>

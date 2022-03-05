@@ -4,24 +4,16 @@
 
 @using VendorOrderTracker.Models;
 
-<h3>Order Details:</h3>
+<h3>Order Details</h3>
 
-<p>
-  Vendor: @Model["vendor"].Name
-</p>
-
-<p>
-  Order: @Model["order"].Title
-</p>
-
-<p>
-  Order Description: @Model["order"].Description
-</p>
-
-<p>
-  Order Price: @Model["order"].Price
-</p>
-
-<p>
-  Order Date: @Model["order"].Date
-</p>
+<fieldset>
+  <legend>
+    <span class='order-name'>@Model["order"].Title</span> for <span class='vendor-name'>@Model["vendor"].Name</span>
+  </legend>
+  <p>
+    <b>Description</b>: @Model["order"].Description<br />
+    <b>Price</b>: @Model["order"].Price<br />
+    <b>Date</b>: @Model["order"].Date<br />
+  </p>
+</fieldset>
+<a href='/vendors'><button type='button'>View Vendors</button></a>

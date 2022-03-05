@@ -8,28 +8,43 @@
 
 <fieldset>
   <legend class='vendor-name'>@Model.Name</legend>
-  <p><b>Description: </b>@Model.Description</p>
-  <p><b>ID: </b>@Model.GetVendorId()</p>
+  <p>
+    <b>Description: </b>@Model.Description<br />
+    <b>ID: </b>@Model.GetVendorId()
+  </p>
+
+  <p>
+    <b>Orders:</b><br />
 
   @if (Model.Orders.Count == 0)
   {
-    <h5>No Orders for this vendor</h5>
-    <!-- Add button to add order -->
+    <p>No Orders for this vendor</p>
   }
 
-  <ul>
+  <table>
+  <thead>
+    <tr>
+      <th style='width: 15%'>Date</th>
+      <th style='width: 20%'>Title</th>
+      <th>Description</th>
+      <th style='width: 10%'>Price</th>
+    </tr>
+  </thead>
+  <tbody>
     @foreach (Order order in Model.Orders)
     {
-      <li>
-        Title: <a href='/vendors/@Model.GetVendorId()/orders/@count'>@order.Title</a><br />
-        Description: @order.Description<br />
-        Price: @order.Price<br />
-        Date: @order.Date<br />
-      </li>
+      <tr>
+        <td><a class='order-name' href='/vendors/@Model.GetVendorId()/orders/@count'>@order.Date</a></td>
+        <td>@order.Title</td>
+        <td>@order.Description</td>
+        <td>@order.Price</td>
+      </tr>
 
       count += 1;
     }
-  </ul>
+  </tbody></table>
+
+  </p>
 
   <a href='/vendors/@Model.GetVendorId()/orders/new'><button type='button'>Add Order</button></a>
 

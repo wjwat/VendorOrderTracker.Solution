@@ -1,18 +1,104 @@
+:root {
+  --width-content: 50rem;
+}
+
 body > header h1 {
   text-align: center;
 }
 
-footer div p {
-  margin: 0.5rem auto;
+button {
+  text-transform: uppercase;
+}
+
+fieldset {
+  padding-bottom: 1.5rem;
+}
+
+legend {
+  font-size: 24px;
+}
+
+thead {
+  background-color: var(--color-bg);
+}
+
+th {
+  background-color: #aaa;
+  color: #001f3f;
+}
+
+td, th {
+  border: 1px solid #ddd;
+}
+
+tbody tr td:first-child {
+  width: 20%;
+}
+
+tbody tr td:first-child {
+  text-align: right;
+  padding-right: 1rem;
+}
+
+table {
+  border: none;
+  border: 2px dotted #ddd;
+  border-left: 8px solid #001f3f;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--color-bg);
 }
 
 textarea {
   resize: vertical;
 }
 
+footer a {
+  margin: 0.5rem auto;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.order-name {
+  font-style: italic;
+}
+
+.reduced-margin {
+  margin: 0.25rem;
+}
+
+.two-column-view {
+  columns: 2;
+}
+
 .vendor-name {
   text-transform: uppercase;
   text-decoration: underline;
   font-weight: bold;
-  font-size: 24px;
+}
+
+/*** Lil Guy ***/
+
+.lilguy:hover {
+  color: red;
+  font-weight: bold;
+}
+
+.lilguy:hover:after {
+  color: white;
+  content: " <(DOWN WITH TDD!)";
+}
+
+@keyframes rainbow_animation {
+  0%,100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
 }

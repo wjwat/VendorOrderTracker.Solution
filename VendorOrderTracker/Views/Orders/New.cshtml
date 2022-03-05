@@ -1,5 +1,7 @@
 @{
   Layout = "_Base";
+  string minDateFormat = "yyyy-MM-dd";
+  string minDate = @System.DateTime.Now.ToString(minDateFormat);
 }
 
 <h2>Add Order for <span class='vendor-name'>@Model.Name</span></h2>
@@ -15,7 +17,7 @@
     <input type='number' name='price' id='price' required>
   </label>
   <label>Order Date:
-    <input type='datetime' name='date' id='date' requried>
+    <input type='date' name='date' id='date' min='@minDate' required>
   </label>
   <button type='submit'>Add Order</button>
 </form>
