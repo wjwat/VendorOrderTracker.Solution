@@ -1,29 +1,29 @@
 @{
+  @using VendorOrderTracker.Models;
+
   Layout = "_Base";
   int count = 0;
 }
 
-@using VendorOrderTracker.Models;
-
 <h2>Vendors</h2>
 
-@if (@Model.Count == 0)
-{
-  <h4>Please add Vendors to view them.</h4>
-  <a href='/vendors/new'><button type='button'>Add Vendor</button></a>
-}
+<p>Click a vendor name to view details about the vendor, and currently open orders with them</p>
 
 <ul>
 @foreach (Vendor vendor in Model)
 {
   <li>
       <a class='vendor-name' href='/vendors/@count'>@vendor.Name</a><br />
-      <b>Description:</b> @vendor.Description
+      <b>Description: </b>@vendor.Description<br />
+      <b>Order Count: </b>@vendor.Orders.Count
   </li>
-
 
   count += 1;
 }
 </ul>
 
+@if (@Model.Count == 0)
+{
+  <h4>Please add Vendors to view them.</h4>
+}
 <a href='/vendors/new'><button type='button'>Add Vendor</button></a>

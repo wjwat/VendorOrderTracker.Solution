@@ -1,0 +1,36 @@
+@{
+  @using VendorOrderTracker.Models;
+
+  Layout = "_Base";
+  int count = 0;
+}
+
+
+<fieldset>
+  <legend class='vendor-name'>@Model.Name</legend>
+  <p><b>Description: </b>@Model.Description</p>
+  <p><b>ID: </b>@Model.GetVendorId()</p>
+
+  @if (Model.Orders.Count == 0)
+  {
+    <h5>No Orders for this vendor</h5>
+    <!-- Add button to add order -->
+  }
+
+  <ul>
+    @foreach (Order order in Model.Orders)
+    {
+      <li>
+        Title: <a href='/vendors/@Model.GetVendorId()/orders/@count'>@order.Title</a><br />
+        Description: @order.Description<br />
+        Price: @order.Price<br />
+        Date: @order.Date<br />
+      </li>
+
+      count += 1;
+    }
+  </ul>
+
+  <a href='/vendors/@Model.GetVendorId()/orders/new'><button type='button'>Add Order</button></a>
+
+</fieldset>

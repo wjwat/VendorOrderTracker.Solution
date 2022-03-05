@@ -1,3 +1,21 @@
 @{
   Layout = "_Base";
 }
+
+<h2>Add Order for <span class='vendor-name'>@Model.Name</span></h2>
+
+<form action='/vendors/@Model.GetVendorId()/orders' method='post'>
+  <label>Order Title:
+    <input type='text' name='title' id='title' required>
+  </label>
+  <label>Order Description:
+    <textarea type='textarea' name='description' id='description' required></textarea>
+  </label>
+  <label>Order Price:
+    <input type='number' name='price' id='price' required>
+  </label>
+  <label>Order Date:
+    <input type='datetime' name='date' id='date' requried>
+  </label>
+  <button type='submit'>Add Order</button>
+</form>
