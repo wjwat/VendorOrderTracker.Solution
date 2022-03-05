@@ -8,7 +8,7 @@
 
 * C#
 * .NET 5.0
-* ASP.Net
+* ASP.NET Core
 * Razor
 * dotnet script REPL
 * MSTest
@@ -53,6 +53,7 @@ C# & ASP.Net to build a RESTful application.
 * [ ] Be more consistent with styling
 * [ ] A better overall UX
 * [ ] Handle edge cases
+* [ ] Custom 404
 
 ## :lady_beetle: Known Bugs
 
