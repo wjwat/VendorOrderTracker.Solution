@@ -4,8 +4,8 @@ namespace VendorOrderTracker.Models
 {
   public class Vendor
   {
-    public string Name { get; init; }
-    public string Description { get; init; }
+    public string Name { get; set; }
+    public string Description { get; set; }
     public List<Order> Orders { get; init; }
     private static List<Vendor> _vendors = new List<Vendor>();
 

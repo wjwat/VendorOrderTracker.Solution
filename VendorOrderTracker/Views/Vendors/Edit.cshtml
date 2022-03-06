@@ -1,0 +1,16 @@
+@{
+  Layout = "_Base";
+}
+
+<h2>Edit Vendor</h2>
+
+<form action='/vendors/@Model.GetVendorId()/edit' method='post'>
+  <label>Vendor Name:
+    <input type='text' name='name' id='name' value='@Model.Name' required>
+  </label>
+  <label>Vendor Description:
+    <textarea type='textarea' name='description' id='description' required>@Model.Description</textarea>
+  </label>
+  <a href='/vendors/@Model.GetVendorId()'><button type='button'>Cancel</button></a>
+  <button type='submit'>Edit Vendor</button>
+</form>

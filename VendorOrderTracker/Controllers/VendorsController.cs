@@ -37,6 +37,25 @@ namespace VendorOrderTracker.Controllers
       return View(vendor);
     }
 
+    [HttpGet("/vendors/{id}/edit")]
+    public ActionResult Edit(int id)
+    {
+      Vendor vendor = Vendor.FindVendor(id);
+
+      return View(vendor);
+    }
+
+    [HttpPost("/vendors/{id}/edit")]
+    public ActionResult Edit(int id, string name, string description)
+    {
+      Vendor vendor = Vendor.FindVendor(id);
+
+      vendor.Name = name;
+      vendor.Description = description;
+
+      return RedirectToAction("Index");
+    }
+
     [HttpPost("/vendors/{id}/orders")]
     public ActionResult Create(int id, string title, string description, int price, string date)
     {
