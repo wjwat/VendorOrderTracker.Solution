@@ -63,6 +63,13 @@ footer a {
   text-align: center;
 }
 
+.delete {
+  background-color: #ff4136;
+  border: 2px solid #111111;
+  color: #FFDC00;
+  font-weight: bold;
+}
+
 .order-name {
   font-style: italic;
 }

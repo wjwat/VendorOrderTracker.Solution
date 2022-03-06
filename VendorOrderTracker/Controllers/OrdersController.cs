@@ -64,5 +64,16 @@ namespace VendorOrderTracker.Controllers
 
       return RedirectToAction("Show", new { orderId, vendorId });
     }
+
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}/delete")]
+    public ActionResult Delete(int vendorId, int orderId)
+    {
+      Vendor vendor = Vendor.FindVendor(vendorId);
+      Order order = vendor.Orders[orderId];
+
+      vendor.Orders.RemoveAt(orderId);
+
+      return RedirectToAction("Show", "Vendors", new { id = vendorId });
+    }
   }
 }
