@@ -1,0 +1,24 @@
+@{
+  Layout = "_Base";
+  string minDateFormat = "yyyy-MM-dd";
+  string minDate = @System.DateTime.Now.ToString(minDateFormat);
+}
+
+<h2>Edit Order for <span class='vendor-name'>@Model["vendor"].Name</span></h2>
+
+<form action='/vendors/@Model["vendor"].GetVendorId()/orders/@Model["orderId"]/edit' method='post'>
+  <label>Order Title:
+    <input type='text' name='title' id='title' value='@Model["order"].Title' required>
+  </label>
+  <label>Order Description:
+    <textarea type='textarea' name='description' id='description' required>@Model["order"].Description</textarea>
+  </label>
+  <label>Order Price:
+    <input type='number' name='price' id='price' value='@Model["order"].Price' required>
+  </label>
+  <label>Order Date:
+    <input type='date' name='date' id='date' min='@minDate' value='@Model["order"].Date' required>
+  </label>
+  <a href='/vendors/@Model["vendor"].GetVendorId()/@Model["orderId"]'><button type='button'>Cancel</button></a>
+  <button type='submit'>Edit Order</button>
+</form>

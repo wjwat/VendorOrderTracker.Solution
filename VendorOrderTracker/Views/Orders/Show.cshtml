@@ -15,5 +15,6 @@
     <b>Price</b>: @Model["order"].Price<br />
     <b>Date</b>: @Model["order"].Date<br />
   </p>
+  <a href='/vendors/@Model["vendor"].GetVendorId()/orders/@Model.["orderId"]/edit'><button type='button'>Edit Order</button></a>
 </fieldset>
 <a href='/vendors'><button type='button'>View Vendors</button></a>
