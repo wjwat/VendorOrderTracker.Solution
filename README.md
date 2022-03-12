@@ -34,7 +34,7 @@ C# & ASP.Net to build a RESTful application.
 - Run `dotnet build VendorOrderTracker` in the top level directory of this repo.
 - Run `dotnet run --project VendorOrderTracker` to get the program running, and the site hosted locally.
 - Visit `http://localhost:5000` to try the site out.
-  - Please make sure to look at your terminal to determine the port number you should be visting in your browser. It may change between runs.
+  - Please make sure to look at your terminal to determine the port number you should be visiting in your browser. It may change between runs.
   - Ex:
     ```shell
     $ dotnet run --project VendorOrderTracker
